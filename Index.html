@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Paradise</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <style>
+        h1 {
+            transition: all ease 400ms;
+        }
+
+        h1:hover {
+            transform: scale(1.03);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: ' cursive';
+            font-weight: 400;
+            font-style: normal;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.836), rgba(0, 0, 0, 0)), url(/Imgs/overview\ bj.png);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-attachment: fixed;
+
+        }
+
+        .space {
+            width: 100%;
+            height: 500px;
+            margin-top: 10%;
+            background-color: #0000008c;
+        }
+
+
+
+        /*--------------home--------*/
+        /*--------------book--------*/
+        .contflex {
+            display: flex;
+            border-radius: 10%;
+            transition: all ease 400ms;
+
+        }
+
+        .contflex :hover {
+            transform: scale(1.03);
+
+        }
+
+        .grid {
+            margin-top: 6%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 15px;
+            border-radius: 15px;
+            width: 90%;
+        }
+
+        .book {
+            margin-top: 5%;
+            width: 100%;
+            height: 20vh;
+            font-weight: bold;
+            color: white;
+        }
+
+        .book .input {
+            background: rgba(0, 0, 0, 0.276);
+            padding: 10px 10px 20px 10px;
+        }
+
+        input {
+            width: 80%;
+            padding: 9px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            outline: none;
+            border-radius: 13px;
+            background: rgba(255, 255, 255);
+            margin-top: 20px;
+            font-weight: bold;
+            color: rgb(0, 0, 0);
+        }
+
+        ::placeholder {
+            color: rgb(0, 0, 0);
+        }
+
+        /*............... cards.................... */
+        .customers {
+            margin-top: 40px;
+            padding: 40px 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/customer-banner.jpg") center/cover no-repeat fixed;
+        }
+
+        .customer {
+            background: #fff;
+            padding: 15px;
+            text-align: center;
+            margin: 40px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.75);
+            cursor: pointer;
+            margin-bottom: 20%;
+        }
+
+        .rating {
+            margin: 10px 0;
+            color: yellow;
+        }
+
+        .customer h3 {
+            font-size: 25px;
+        }
+
+        .customer p {
+            opacity: 0.7;
+            line-height: 1.8;
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        .customer img {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            margin: 25px auto;
+        }
+
+        .customer span {
+            font-weight: 700;
+            opacity: 0.7;
+        }
+
+        .customer:hover {
+            transform: translateY(-18px);
+        }
+
+        @media(min-width: 992px) {
+            .customers-container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 30px;
+            }
+        }
+
+        @media(min-width: 1370px) {
+            .customers-container {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media(max-width: 500px) {
+            .customer p {
+                width: 100%;
+            }
+
+            .customer img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        /* footer */
+        .footer {
+            background: rgb(0, 0, 0);
+            color: #fff;
+            text-align: center;
+            margin-top: 5%;
+        }
+
+        .footer-container {
+
+            width: 85vw;
+            margin: 0 auto;
+            padding: 30px 0;
+        }
+
+        .footer-container p,
+        .footer-container a,
+        .footer-container span {
+            opacity: 0.8;
+        }
+
+        .footer a {
+            display: flex;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .social-icons {
+            list-style: none;
+            display: flex;
+            justify-items: center;
+            padding: 15px 0;
+        }
+
+        .social-icons li {
+            margin: 0 10px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .contact-item span {
+            display: block;
+        }
+
+        @media(min-width: 900px) {
+            .footer-container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 20px;
+            }
+        }
+
+        @media(min-width: 1170px) {
+            .footer {
+                text-align: left;
+            }
+
+            .footer-container {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .footer-container div:nth-child(1) p {
+                padding-right: 20px;
+            }
+
+            .contact-item {
+                display: grid;
+                grid-template-columns: 10% 90%;
+                margin-bottom: 15px;
+                align-items: center;
+            }
+        }
+
+        .showModal {
+            position: fixed;
+            background: transparent;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 5;
+        }
+
+        /* Basic card styles */
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 40px;
+            margin-left: 40px;
+
+        }
+
+        /* Responsive styles */
+        @media screen and (min-width: 600px) {
+            .card {
+                width: 96%;
+                /* Example width for larger screens */
+            }
+        }
+
+        @media screen and (max-width: 599px) {
+            .card {
+                width: 96%;
+                /* Full width for smaller screens */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body" style="margin-left: 5%; margin-right:5%;">
+        <center>
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <div>
+
+                        <form class="container-fluid m-2 justify-content-right">
+
+                            <a href="SignUp.html" class="nav-link active  fs-6" aria-current="page"><button
+                                    class="btn btn-outline-light fs-6 " type="button">Sign
+                                    Up</a></button>
+                            <img src="/Imgs/pipe.png" alt="pipe" height="65px">
+                            <a class="active  fs-6" aria-current="page" href="/Login.html"><button
+                                    class="btn btn-outline-light  " type="button">Login</button></a>
+                        </form>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+
+                        <a class="nav-link active  fs-5" aria-current="page" href="Index.html"><button
+                                class="btn btn-outline-light m-1 fs-6 " type="button">Home</a></button>
+
+                        <a class="nav-link active  fs-5" aria-current="page" href="Rooms.html"><button
+                                class="btn btn-outline-light m-1 fs-6 " type="button">Rooms</a></button>
+                        <a class="nav-link active  fs-5" aria-current="page" href="Dining.html"><button
+                                class="btn btn-outline-light m-1 fs-6 " type="button">Dining</a></button>
+                        <a class="nav-link active  fs-5" aria-current="page" href="About.html"><button
+                                class="btn btn-outline-light m-1 fs-6 " type="button">About</a></button>
+                        <a class="nav-link active  fs-5" aria-current="page" href="/Offers.html" target="_blank"><button
+                                class="btn btn-outline-light m-1 fs-6 " type="button">Offer</a></button>
+                        <a class="nav-link active  fs-5" aria-current="page" href="Services.html"><button
+                                class="btn btn-outline-light m-1 fs-6 " type="button">Services</a></button>
+                        <a class="nav-link active  fs-5" aria-current="page" href="ContactUs.html"><button
+                                class="btn btn-outline-light m-1 fs-6 " type="button">Contact Us</a></button>
+                    </div>
+
+                </div>
+            </nav>
+
+        </center><br><br><br>
+
+        <div class="div">
+            <div class="contain">
+
+                <center>
+                    <div class="logo"><a class="navbar-brand mt-2 mb-4" href="index.html">
+                            <img src="Imgs/logo.png " class="img-fluid" alt="logo" width="30%" height="380px"></a></div>
+                    <h1 style="font-size: 70px; color:white; margin-top:5%; text-shadow: 0px 50px 80px #030303;">Once a
+                        Year
+                        Go Someplace You've <br> Never
+                        Been Before. </h1><br><br>
+
+                </center>
+            </div>
+        </div>
+
+        <!-- *********************************************************************************************************** -->
+        <script src="//my.visme.co/visme-embed.js"></script>
+        <div class="visme_d" data-title="good" data-url="ojew16w4-" data-w="1752" data-full-h="true" data-h="1056"
+            data-domain="my"></div>
+        <p
+            style="width:142px !important;border-radius:3px !important;padding:3px !important;font-size:12px !important;font-family:Arial, sans-serif !important;color:#314152 !important;white-space:nowrap !important">
+            Made with <a href="https://www.visme.co/?vc=Made-With-Visme&amp;utm_medium=Embed" target="_blank"
+                rel="noreferrer"
+                style="font-weight:600 !important;text-decoration:none !important;font-size:12px !important;font-family:Arial, sans-serif !important;color:#314152 !important;white-space:nowrap !important">Visme</a>
+        </p>
+        <!-- *********************************************************************************************************** -->
+        <div class="book">
+
+            <div class="contflex justify-content-center">
+                <div class="input grid w-90 mb-5">
+                    <div class="box">
+                        <label> Destination:</label><br>
+                        <input type="text" placeholder="Karachi" id="1" required>
+                    </div>
+                    <div class="box">
+                        <label> Check-In & Check-Out </label><br>
+                        <input type="date" placeholder="Check-in-Date" id="2" required>
+                    </div>
+                    <div class="box">
+                        <label> Person:</label><br>
+                        <input type="number" placeholder="0" id="4" required>
+                    </div>
+                    <h1 style="font-size: 40px; color:white; margin-top:9%;">Time: <span id="time"></span> </h1>
+
+                </div>
+            </div>
+
+        </div>
+        <center>
+            <div class="space w-90"><br>
+                <button class="btn btn-outline-light m-3 p-3 fs-6 bg-dark" style="color:rgb(255, 255, 255) "
+                    type="button"><a class="nav-link active  fs-4" aria-current="page" onclick="run()">
+                        Book Now </a></button>
+                <br>
+                <h1 style="font-size: 60px; color:white; margin-top:1%; "> *** Total
+                    Booking Details *** </h1>
+                <h1 style="font-size: 40px; color:white; margin-top:4%;">Destination :
+                    Karachi </h1>
+                <h1 style="font-size: 40px; color:white; margin-top:1%;">Date & Time :
+                    <span id="ch-in"></span>
+                </h1>
+                <h1 style="font-size: 40px; color:white; margin-top:1%;">Person :
+                    <span id="num"></span>
+                </h1>
+
+            </div>
+
+
+
+            <div class="customers-container w-100 " style="margin-top : 160px;">
+
+                <div class="customer ">
+                    <div class="rating">
+                        <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                        <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                        <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                        <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                        <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                    </div>
+                    <h3>We Loved it</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat beatae veritatis provident
+                        eveniet
+                        praesentium veniam cum iusto distinctio esse, vero est autem, eius optio cupiditate?</p>
+                    <img src="Imgs/p1.jpeg" alt="customer image">
+                    <figcaption><span>Charlie , Turkey</span></figcaption>
+                </div>
+
+                <div class="customer">
+                    <div class="rating">
+                        <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                        <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                        <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                        <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                        <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                    </div>
+                    <h3>Comfortable Living</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat beatae veritatis provident
+                        eveniet
+                        praesentium veniam cum iusto distinctio esse, vero est autem, eius optio cupiditate?</p>
+                    <img src="Imgs/p2.jpg" alt="customer image">
+
+                    <figcaption><span>Jeff , New York</span></figcaption>
+                </div>
+                <div class="customer">
+                    <div class="rating">
+                        <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                        <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                        <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                        <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                        <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                    </div>
+                    <h3>Nice Place</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat beatae veritatis provident
+                        eveniet
+                        praesentium veniam cum iusto distinctio esse, vero est autem, eius optio cupiditate?</p>
+                    <img src="Imgs/p3.jpg" alt="customer image">
+                    <figcaption><span>Janifier , United Kingdom</span></figcaption>
+                </div>
+            </div>
+        </center>
+        <div class="div">
+            <div class="gallary mt-5">
+                <center>
+                    <h1 style="color: white;">Photo Gallary of Our Hotel</h1>
+                    <br><br><br><br>
+                </center>
+            </div>
+            <!-- ********************************************* CAROSOUL *************************************************** -->
+            <main id="app">
+                <div class="carousel">
+                    <ul class="carousel__list">
+                        <li class="carousel__item" tabindex="0">
+                            <div class="carousel__box">
+                                <div class="carousel__image"><img src="Imgs/hotel (3).jpg" width="480" height="720" />
+                                </div>
+                                >
+                                <div class="carousel__contents">
+                                    <h2 class="user__name">Calm Atmostphare </h2>
+                                    <h3 class="user__title">higly Designed Lawn with </h3>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="carousel__item" tabindex="0">
+                            <div class="carousel__box">
+                                <div class="carousel__image"><img src="Imgs/gym center (1).jpg" width="480"
+                                        height="720" />
+                                </div>
+                                <div class="carousel__contents">
+                                    <h2 class="user__name">Fitness Center</h2>
+                                    <h3 class="user__title">make Youslef Fit & Healthy</h3>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="carousel__item" tabindex="0">
+                            <div class="carousel__box">
+                                <div class="carousel__image"><img src="Imgs/suite (3).jpg" width="480" height="720" />
+                                </div>
+                                <div class="carousel__contents">
+                                    <h2 class="user__name">Twin Bed Set</h2>
+                                    <h3 class="user__title">with widely Space </h3>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="carousel__item" tabindex="0">
+                            <div class="carousel__box">
+                                <div class="carousel__image"><img src="Imgs/room (4).jpg" width="480" height="720" />
+                                </div>
+                                <div class="carousel__contents">
+                                    <h2 class="user__name">Standard Rooms</h2>
+                                    <h3 class="user__title">make Youslef At Home</h3>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="carousel__item" tabindex="0" data-active="data-active">
+                            <div class="carousel__box">
+                                <div class="carousel__image"><img src="Imgs/meeting and events (2).jpg" width="480"
+                                        height="720" /></div>
+                                <div class="carousel__contents">
+                                    <h2 class="user__name">Comfort Space</h2>
+                                    <h3 class="user__title">Cozy And Personal</h3>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="carousel__item" tabindex="0">
+                            <div class="carousel__box">
+                                <div class="carousel__image"><img src="Imgs/meeting and events (1).jpg" width="480"
+                                        height="720" /></div>
+                                <div class="carousel__contents">
+                                    <h2 class="user__name">For Meeting And Events</h2>
+                                    <h3 class="user__title">Widely Designed</h3>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="carousel__item" tabindex="0">
+                            <div class="carousel__box">
+                                <div class="carousel__image"><img src="Imgs/hotel (4).jpg" width="480" height="720" />
+                                </div>
+                                >
+                                <div class="carousel__contents">
+                                    <h2 class="user__name">Fridenly Hotel Staff</h2>
+                                    <h3 class="user__title">Our Well Trained</h3>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="carousel__item" tabindex="0">
+                            <div class="carousel__box">
+                                <div class="carousel__image"><img src="Imgs/breakfast (1).jpg" width="480"
+                                        height="720" />
+                                </div>>
+                                <div class="carousel__contents">
+                                    <h2 class="user__name">Well Designed Buffy</h2>
+                                    <h3 class="user__title">Maintained By Our Top Chefs</h3>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="carousel__item" tabindex="0">
+                            <div class="carousel__box">
+                                <div class="carousel__image"><img src="Imgs/service (1).jpg" width="480" height="720" />
+                                </div>
+                                <div class="carousel__contents">
+                                    <h2 class="user__name">Grand View</h2>
+                                    <h3 class="user__title">Our Beloved Portion</h3>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="carousel__item" tabindex="0">
+                            <div class="carousel__box">
+                                <div class="carousel__image"><img src="Imgs/restaurant (1).jpg" width="480"
+                                        height="720" />
+                                </div>
+                                <div class="carousel__contents">
+                                    <h2 class="user__name">Well Organized Staff</h2>
+                                    <h3 class="user__title">Highly Recommanded Dining</h3>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="carousel__item" tabindex="0">
+                            <div class="carousel__box">
+                                <div class="carousel__image"><img src="Imgs/parking.jpg" width="480" height="720" />
+                                </div>
+                                <div class="carousel__contents">
+                                    <h2 class="user__name">Newly Updated Feature</h2>
+                                    <h3 class="user__title">Our Own Parking Spot</h3>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="carousel__item" tabindex="0">
+                            <div class="carousel__box">
+                                <div class="carousel__image"><img src="Imgs/spa (6).jpg" width="480" height="720" />
+                                </div>
+                                <div class="carousel__contents">
+                                    <h2 class="user__name">Newly Updated Feature</h2>
+                                    <h3 class="user__title">Well Organized Spa</h3>
+                                </div>
+                            </div>
+                        </li>
+                    </ul><br><br>
+                    <div class="carousel__nav ">
+                        <button class="prev ">
+                            <svg width="24" height="24" viewBox="0 0 24 24">
+                                <path
+                                    d="M9.586 4l-6.586 6.586a2 2 0 0 0 0 2.828l6.586 6.586a2 2 0 0 0 2.18 .434l.145 -.068a2 2 0 0 0 1.089 -1.78v-2.586h7a2 2 0 0 0 2 -2v-4l-.005 -.15a2 2 0 0 0 -1.995 -1.85l-7 -.001v-2.585a2 2 0 0 0 -3.414 -1.414z">
+                                </path>
+                            </svg><span>prev</span>
+                        </button>
+                        <button class="next"><span>next</span>
+                            <svg width="24" height="24" viewBox="0 0 24 24">
+                                <path
+                                    d="M12.089 3.634a2 2 0 0 0 -1.089 1.78l-.001 2.586h-6.999a2 2 0 0 0 -2 2v4l.005 .15a2 2 0 0 0 1.995 1.85l6.999 -.001l.001 2.587a2 2 0 0 0 3.414 1.414l6.586 -6.586a2 2 0 0 0 0 -2.828l-6.586 -6.586a2 2 0 0 0 -2.18 -.434l-.145 .068z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <<br><br><br><br><br><br>
+            <!-- ***********************************************************  -->
+            <div class="container-fluid mt-5 " style="background-color: #f4f4d0;">
+                <div class="container col-xxl-8 px-4 py-5">
+                    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                        <div class="col-10 col-sm-8 col-lg-6">
+                            <img class="img-fluid" src="/Imgs/Golf (1).jpg"
+                                style=" border-radius:50%; border:#355c268a double 20px"
+                                class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500"
+                                loading="lazy">
+                        </div>
+                        <div class="col-lg-6">
+                            <h1 class="display-5 fw-bold text-body-emphasis lh-2 mb-2">Here You Can Find <span>
+                                </span><img src="/Imgs/happy emoji.png" width="70" height="70"> The Real Tressure Of
+                                Golf </h1>
+                            <p class="lead">Golf is a very popular sport worldwide. It is a game played on a large
+                                outdoor
+                                course, the object being to propel a small hard ball into a series of 'holes' with as
+                                few
+                                strokes as possible, using a variety of wood or iron-tipped sticks or 'golf clubs'.</p>
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                                <button type="button" class="btn btn-outline-success btn-lg px-4 me-md-2 active"
+                                    fdprocessedid="z31pvw"><a href="Offers.html"
+                                        class="text-decoration-none text-light">Checkout Our Activities</a></button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+    </div>
+
+    <footer class="footer">
+        <br>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.404984704744!2d66.9965998112964!3d24.850014145582804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33e115cbdc755%3A0x93603ffb7aba4369!2sM.A%20Jinnah%20Rd%2C%20Bunder%20Quarter%2C%20Karachi%2C%20Karachi%20City%2C%20Sindh%2C%20Pakistan!5e0!3m2!1sen!2s!4v1708120520930!5m2!1sen!2s"
+            width="100%" height="130" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="footer-container">
+            <div>
+                <h2>About Us </h2><br>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque sapiente mollitia doloribus
+                    provident? Eos quisquam aliquid vel dolorum, impedit culpa.</p>
+                <ul class="social-icons">
+                    <li class="flex">
+                        <a href="https://twitter.com/i/flow/login" target="_blank"><i class="fa fa-twitter fa-1x"
+                                aria-hidden="true"></a></i>
+                    </li>
+                    <li class="flex">
+                        <a href="https://www.facebook.com/login/" target="_blank"><i class="fa fa-facebook fa-1x"
+                                aria-hidden="true"></a></i>
+                    </li>
+                    <li class="flex">
+                        <a href="https://www.instagram.com/accounts/login/?hl=en" target="_blank"><i
+                                class="fa fa-instagram fa-1x" aria-hidden="true"></a></i>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h2>Useful Links</h2><br>
+                <a href="/Login.html">Blog</a>
+                <a href="/Rooms.html">Rooms</a>
+                <a href="/SignUp.html">Subscription</a>
+                <a href="#">Gift Card</a>
+            </div>
+
+            <div>
+                <h2>Privacy</h2>
+                <br>
+                <a href="/Index.html">Home</a>
+                <a href="/About.html">About Us</a>
+                <a href="/ContactUs.html">Contact Us</a>
+                <a href="/Services.html">Services</a>
+            </div>
+
+            <div>
+                <h2>Have A Question</h2><br>
+                <div class="contact-item">
+                    <span>
+                        <i class="fa fa-map"></i>
+                    </span>
+                    <span>
+                        M.A Jinnah Rd
+                        Bunder Quarter, Karachi, Karachi City, Sindh
+                        Pakistan
+                    </span>
+                </div>
+                <div class="contact-item">
+                    <span>
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                    </span>
+                    <span>
+                        +92 3130260559
+                    </span>
+                </div>
+                <div class="contact-item">
+                    <span>
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </span>
+                    <span>
+                        bushrajantubajan@gmail.com
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-1  fs-3" style="background-color: rgb(255, 255, 255);">
+            <a class="text-body" href="#">© 2020 Copyright : Paradise Hotel</a>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+
+<!--  -->

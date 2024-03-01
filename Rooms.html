@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Paradise</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <style>
+        h1 {
+            transition: all ease 400ms;
+        }
+
+        h1:hover {
+            transform: scale(1.03);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: ' cursive';
+            font-weight: 400;
+            font-style: normal;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.498), rgba(96, 84, 84, 0.685)), url(/Imgs/room\ \(4\).jpg);
+            /* background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(/Imgs/overview\ bj.png); */
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-attachment: fixed;
+            color: #ffffff;
+
+        }
+
+        .col-md-6 {
+            transition: all ease 400ms;
+        }
+
+        .col-md-6 :hover {
+            transform: scale(1.03);
+        }
+
+        /* footer */
+        .footer {
+            background: rgb(0, 0, 0);
+            color: #fff;
+            text-align: center;
+            margin-top: 5%;
+        }
+
+        .footer-container {
+
+            width: 85vw;
+            margin: 0 auto;
+            padding: 30px 0;
+        }
+
+        .footer-container p,
+        .footer-container a,
+        .footer-container span {
+            opacity: 0.8;
+        }
+
+        .footer a {
+            display: flex;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .social-icons {
+            list-style: none;
+            display: flex;
+            justify-items: center;
+            padding: 15px 0;
+        }
+
+        .social-icons li {
+            margin: 0 10px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .contact-item span {
+            display: block;
+        }
+
+        @media(min-width: 900px) {
+            .footer-container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 20px;
+            }
+        }
+
+        @media(min-width: 1170px) {
+            .footer {
+                text-align: left;
+            }
+
+            .footer-container {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .footer-container div:nth-child(1) p {
+                padding-right: 20px;
+            }
+
+            .contact-item {
+                display: grid;
+                grid-template-columns: 10% 90%;
+                margin-bottom: 15px;
+                align-items: center;
+            }
+        }
+
+        .showModal {
+            position: fixed;
+            background: transparent;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body" style="margin-left: 5%; margin-right:5%;">
+        <center>
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <div>
+
+                        <form class="container-fluid m-2 justify-content-right">
+
+                            <a href="SignUp.html" class="nav-link active  fs-6" aria-current="page"><button
+                                    class="btn btn-outline-light fs-6 " type="button">Sign
+                                    Up</a></button>
+                            <img src="/Imgs/pipe.png" alt="pipe" height="65px">
+                            <a class="active  fs-6" aria-current="page" href="/Login.html"><button
+                                    class="btn btn-outline-light  " type="button">Login</button></a>
+                        </form>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+
+                        <a class="nav-link active  fs-5" aria-current="page" href="Index.html"><button
+                                class="btn btn-outline-light m-1 fs-6 " type="button">Home</a></button>
+
+                        <a class="nav-link active  fs-5" aria-current="page" href="Rooms.html"><button
+                                class="btn btn-outline-light m-1 fs-6 " type="button">Rooms</a></button>
+                        <a class="nav-link active  fs-5" aria-current="page" href="Dining.html"><button
+                                class="btn btn-outline-light m-1 fs-6 " type="button">Dining</a></button>
+                        <a class="nav-link active  fs-5" aria-current="page" href="About.html"><button
+                                class="btn btn-outline-light m-1 fs-6 " type="button">About</a></button>
+                        <a class="nav-link active  fs-5" aria-current="page" href="/Offers.html" target="_blank""><button
+                            class=" btn btn-outline-light m-1 fs-6 " type=" button">Offer</a></button>
+                        <a class="nav-link active  fs-5" aria-current="page" href="Services.html"><button
+                                class="btn btn-outline-light m-1 fs-6 " type="button">Services</a></button>
+                        <a class="nav-link active  fs-5" aria-current="page" href="ContactUs.html"><button
+                                class="btn btn-outline-light m-1 fs-6 " type="button">Contact Us</a></button>
+                    </div>
+
+                </div>
+            </nav>
+
+        </center><br><br><br>
+
+        <div class="div">
+            <div class="contain">
+
+                <center>
+                    <div class="logo"><a class="navbar-brand mt-2 mb-4" href="index.html">
+                            <img src="Imgs/logo.png " class="img-fluid" alt="logo" width="30%" height="380px"></a></div>
+                    <h1 style="font-size: 70px; color:white; margin-top:5%; text-shadow: 0px 50px 80px #030303;">Rooms
+                        <br>Darkness cannot drive out darkness: Only light can do that. ...
+                    </h1><br><br>
+                    <button class="btn btn-outline-light m-3 p-3 fs-6 bg-dark" type="button">
+                        <a  class="navbar-brand mt-2 mb-4"  href="SignUp.html" style="color:white;font-size: 25px;">Book Now Your Own Happines </button></a>
+                </center>
+                <br><br>
+            </div>
+        </div>
+        <!-- 888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888 -->
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-6 ">
+                    <div
+                        class="row g-0 border rounded  overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+
+                            <h3 class="mb-0">Bed configuration</h3><br>
+                            <p class="card-text mb-auto ">Each hotel has a slightly different list that can also include
+                                details such as the window details such as the window view or the presence of a balcony.
+                            </p><br>
+                            <div class="mb-1 text-body-light">Price: <s>6,000</s> ( 4,500 )/ per night</div>
+
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <img src="/Imgs/room (1).jpg" alt="" width="380" height="300">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 ">
+                    <div class="row g-0 border rounded  overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+                        class="image">
+                        <div class="col p-4 d-flex flex-column position-static">
+
+                            <h3 class="mb-0">Wintage Rooms</h3><br>
+                            <p class="mb-auto">Each hotel has a slightly different list that can also include details
+                                such as the window details such as the window view or the presence of a balcony.</p>
+                            <br>
+
+                            <div class=" text-body-light">Price: <s>4,000</s> ( 3,500 )/ per night</div>
+
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <img src="/Imgs/room (10).jpg" alt="" width="380" height="300">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 ">
+                    <div class="row g-0 border rounded  overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+                        class="image">
+                        <div class="col p-4 d-flex flex-column position-static">
+
+                            <h3 class="mb-0">Highly calmful</h3><br>
+                            <p class="card-text mb-auto">Each hotel has a slightly different list that can also include
+                                details such as the window details such as the window view or the presence of a balcony.
+                            </p><br>
+                            <div class="mb-1 text-body-light">Price: <s>6,000</s> ( 4,500 )/ per night</div>
+
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <img src="/Imgs/room (9).jpg" alt="" width="380" height="300">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 ">
+                    <div class="row g-0 border rounded  overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+                        class="image">
+                        <div class="col p-4 d-flex flex-column position-static">
+
+                            <h3 class="mb-0">Cozy & Comfy</h3><br>
+                            <p class="mb-auto">Each hotel has a slightly different list that can also include details
+                                such as the window details such as the window view or the presence of a balcony.</p><br>
+                            <div class="mb-1 text-body-light">Price: <s>9,000</s> ( 8,500 )/ per night</div>
+
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <img src="/Imgs/room (8).jpg" alt="" width="380" height="300">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 ">
+                    <div class="row g-0 border rounded  overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+                        class="image">
+                        <div class="col p-4 d-flex flex-column position-static">
+
+                            <h3 class="mb-0">Extra Bed Option</h3><br>
+                            <p class="card-text mb-auto">Each hotel has a slightly different list that can also include
+                                details such as the window details such as the window view or the presence of a balcony.
+                            </p><br>
+                            <div class="mb-1 text-body-light">Price: <s>7,000</s> ( 5,500 )/ per night</div>
+
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <img src="/Imgs/room (2).jpg" alt="" width="380" height="300">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 ">
+                    <div class="row g-0 border rounded  overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+                        class="image">
+                        <div class="col p-4 d-flex flex-column position-static">
+
+                            <h3 class="mb-0">Wonderful Choise</h3><br>
+                            <p class="mb-auto">Each hotel has a slightly different list that can also include details
+                                such as the window details such as the window view or the presence of a balcony.</p><br>
+                            <div class="mb-1 text-body-warning">Price: <s>6,000</s> ( 4,500 )/ per night</div>
+
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <img src="/Imgs/room (7).jpg" alt="" width="380" height="300">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888 -->
+
+        <div class=""><img src="/Imgs/offer (1).jpg" width="100%" height="700"></div>
+        <!-- 888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888 -->
+        <div class="container">
+            <div class="row mb-2 ">
+
+
+                <div class="col-md-6 mt-5 ">
+                    <div class="row g-0 border rounded  overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+                        class="image">
+                        <div class="col p-4 d-flex flex-column position-static">
+
+                            <h3 class="mb-0">Highly calmful</h3><br>
+                            <p class="card-text mb-auto">Each hotel has a slightly different list that can also include
+                                details such as the window details such as the window view or the presence of a balcony.
+                            </p><br>
+                            <div class="mb-1 text-body-light">Price: <s>6,000</s> ( 4,500 )/ per night</div>
+
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <img src="/Imgs/room (9).jpg" alt="" width="380" height="300">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mt-5 ">
+                    <div class="row g-0 border rounded  overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+                        class="image">
+                        <div class="col p-4 d-flex flex-column position-static">
+
+                            <h3 class="mb-0">Cozy & Comfy</h3><br>
+                            <p class="mb-auto">Each hotel has a slightly different list that can also include details
+                                such as the window details such as the window view or the presence of a balcony.</p><br>
+                            <div class="mb-1 text-body-light">Price: <s>9000</s> ( 8,500 )/ per night</div>
+
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <img src="/Imgs/room (8).jpg" alt="" width="380" height="300">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 ">
+                    <div class="row g-0 border rounded  overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+                        class="image">
+                        <div class="col p-4 d-flex flex-column position-static">
+
+                            <h3 class="mb-0">Extra Bed Option</h3><br>
+                            <p class="card-text mb-auto">Each hotel has a slightly different list that can also include
+                                details such as the window details such as the window view or the presence of a balcony.
+                            </p><br>
+                            <div class="mb-1 text-body-light">Price: <s>7,000</s> ( 5,500 )/ per night</div>
+
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <img src="/Imgs/room (2).jpg" alt="" width="380" height="300">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 ">
+                    <div class="row g-0 border rounded  overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+                        class="image">
+                        <div class="col p-4 d-flex flex-column position-static">
+
+                            <h3 class="mb-0">Wonderful Choise</h3><br>
+                            <p class="mb-auto">Each hotel has a slightly different list that can also include details
+                                such as the window details such as the window view or the presence of a balcony.</p><br>
+                            <div class="mb-1 text-body-warning">Price: <s>6,000</s> ( 4,500 )/ per night</div>
+
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <img src="/Imgs/room (7).jpg" alt="" width="380" height="300">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888 -->
+    <footer class="footer">
+        <br>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.404984704744!2d66.9965998112964!3d24.850014145582804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33e115cbdc755%3A0x93603ffb7aba4369!2sM.A%20Jinnah%20Rd%2C%20Bunder%20Quarter%2C%20Karachi%2C%20Karachi%20City%2C%20Sindh%2C%20Pakistan!5e0!3m2!1sen!2s!4v1708120520930!5m2!1sen!2s"
+            width="100%" height="130" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="footer-container">
+            <div>
+                <h2>About Us </h2><br>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque sapiente mollitia doloribus
+                    provident? Eos quisquam aliquid vel dolorum, impedit culpa.</p>
+                <ul class="social-icons">
+                    <li class="flex">
+                        <a href="https://twitter.com/i/flow/login" target="_blank"><i class="fa fa-twitter fa-1x"
+                                aria-hidden="true"></a></i>
+                    </li>
+                    <li class="flex">
+                        <a href="https://www.facebook.com/login/" target="_blank"><i class="fa fa-facebook fa-1x"
+                                aria-hidden="true"></a></i>
+                    </li>
+                    <li class="flex">
+                        <a href="https://www.instagram.com/accounts/login/?hl=en" target="_blank"><i
+                                class="fa fa-instagram fa-1x" aria-hidden="true"></a></i>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h2>Useful Links</h2><br>
+                <a href="/Login.html">Blog</a>
+                <a href="/Rooms.html">Rooms</a>
+                <a href="/SignUp.html">Subscription</a>
+                <a href="#">Gift Card</a>
+            </div>
+
+            <div>
+                <h2>Privacy</h2>
+                <br>
+                <a href="/Index.html">Home</a>
+                <a href="/About.html">About Us</a>
+                <a href="/ContactUs.html">Contact Us</a>
+                <a href="/Services.html">Services</a>
+            </div>
+
+            <div>
+                <h2>Have A Question</h2><br>
+                <div class="contact-item">
+                    <span>
+                        <i class="fa fa-map"></i>
+                    </span>
+                    <span>
+                        M.A Jinnah Rd
+                        Bunder Quarter, Karachi, Karachi City, Sindh
+                        Pakistan
+                    </span>
+                </div>
+                <div class="contact-item">
+                    <span>
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                    </span>
+                    <span>
+                        +92 3130260559
+                    </span>
+                </div>
+                <div class="contact-item">
+                    <span>
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </span>
+                    <span>
+                        bushrajantubajan@gmail.com
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-1  fs-3" style="background-color: rgb(255, 255, 255);">
+            <a class="text-body" href="#">© 2020 Copyright : Paradise Hotel</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+<!--  -->

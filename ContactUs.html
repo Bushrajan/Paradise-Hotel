@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Paradise</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <style>
+        h1 {
+            transition: all ease 400ms;
+        }
+
+        h1:hover {
+            transform: scale(1.03);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: ' cursive';
+            font-weight: 400;
+            font-style: normal;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0)), url(/Imgs/contact\ us.png);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-attachment: fixed;
+
+        }
+
+
+
+        /* footer */
+        .footer {
+            background: rgb(0, 0, 0);
+            color: #fff;
+            text-align: center;
+            margin-top: 5%;
+        }
+
+        .footer-container {
+
+            width: 85vw;
+            margin: 0 auto;
+            padding: 30px 0;
+        }
+
+        .footer-container p,
+        .footer-container a,
+        .footer-container span {
+            opacity: 0.8;
+        }
+
+        .footer a {
+            display: flex;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .social-icons {
+            list-style: none;
+            display: flex;
+            justify-items: center;
+            padding: 15px 0;
+        }
+
+        .social-icons li {
+            margin: 0 10px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .contact-item span {
+            display: block;
+        }
+
+        @media(min-width: 900px) {
+            .footer-container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 20px;
+            }
+        }
+
+        @media(min-width: 1170px) {
+            .footer {
+                text-align: left;
+            }
+
+            .footer-container {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .footer-container div:nth-child(1) p {
+                padding-right: 20px;
+            }
+
+            .contact-item {
+                display: grid;
+                grid-template-columns: 10% 90%;
+                margin-bottom: 15px;
+                align-items: center;
+            }
+        }
+
+        .showModal {
+            position: fixed;
+            background: transparent;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 5;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="body" style="margin-left: 5%; margin-right:5%;">
+        <center>
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <div>
+
+                        <form class="container-fluid m-2 justify-content-right">
+
+                            <a href="SignUp.html" class="nav-link active  fs-6" aria-current="page"><button
+                                    class="btn btn-outline-light fs-6 " type="button">Sign
+                                    Up</a></button>
+                            <img src="/Imgs/pipe.png" alt="pipe" height="65px">
+                            <a class="active  fs-6" aria-current="page" href="/Login.html"><button
+                                    class="btn btn-outline-light  " type="button">Login</button></a>
+                        </form>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+
+                        <a class="nav-link active  fs-5" aria-current="page" href="Index.html"><button
+                                class="btn btn-outline-light m-1 fs-6 " type="button">Home</a></button>
+
+                        <a class="nav-link active  fs-5" aria-current="page" href="Rooms.html"><button
+                                class="btn btn-outline-light m-1 fs-6 " type="button">Rooms</a></button>
+                        <a class="nav-link active  fs-5" aria-current="page" href="Dining.html"><button
+                                class="btn btn-outline-light m-1 fs-6 " type="button">Dining</a></button>
+                        <a class="nav-link active  fs-5" aria-current="page" href="About.html"><button
+                                class="btn btn-outline-light m-1 fs-6 " type="button">About</a></button>
+                        <a class="nav-link active  fs-5" aria-current="page" href="/Offers.html" target="_blank"><button
+                                class="btn btn-outline-light m-1 fs-6 " type="button">Offer</a></button>
+                        <a class="nav-link active  fs-5" aria-current="page" href="Services.html"><button
+                                class="btn btn-outline-light m-1 fs-6 " type="button">Services</a></button>
+                        <a class="nav-link active  fs-5" aria-current="page" href="ContactUs.html"><button
+                                class="btn btn-outline-light m-1 fs-6 " type="button">Contact Us</a></button>
+                    </div>
+
+                </div>
+            </nav>
+
+        </center><br><br><br>
+
+        <div class="div">
+            <div class="contain">
+
+                <center>
+                    <div class="logo"><a class="navbar-brand mt-2 mb-4" href="index.html">
+                            <img src="Imgs/logo.png " class="img-fluid" alt="logo" width="30%" height="380px"></a></div>
+                    <h1
+                        style="font-size: 90px; color:rgb(255, 255, 255); margin-top:5%; text-shadow: 0px 50px 80px #030303;">
+                        Contact Us<br></h1><br><br>
+                    <button class="btn btn-outline-light m-3 p-3 fs-1 bg-light btn-lg fw-bold"
+                        style="color:rgb(0, 0, 0);" type="button" href="#">
+                        Meet Our Amazing Hotel managers </button>
+                </center>
+            </div>
+        </div> <br> <br>
+        <!-- ************************************************************************************************************************************************************** -->
+
+        <center>
+            <div class=" d-inline-flex">
+                <figure><img src="/Imgs/Bushra.jpg" width="300" height="350" class=" mx-4 mt-4"
+                        style="border-radius: 50%; border: #fff double 25px; ">
+                    <figcaption style="font-size:xx-large; color: #fff;"> Bushra Jan</figcaption>
+                </figure>
+                <figure><img src="/Imgs/Tuba.jpg" width="300" height="350" class=" mx-4 mt-4"
+                        style="border-radius: 50%; border: #fff double 25px;">
+                    <figcaption style="font-size:xx-large; color: #fff;"> Tuba Jan</figcaption>
+                </figure>
+                <figure><img src="/Imgs/Aswa.jpg" width="300" height="350" class=" mx-4 mt-4"
+                        style="border-radius: 50%; border: #fff double 25px;">
+                    <figcaption style="font-size:xx-large; color: #fff;"> Aswa Sohail</figcaption>
+                </figure>
+
+            </div>
+        </center>
+
+        <!-- ************************************************************************************************************************************************************** -->
+        <div class="container-fluid p-5 h-100">
+            <p class="display-6 text-center mb-4 " style="font-size: 100px; color: #fff; margin: 20px;">Compare plans
+            </p>
+            <div class="table-responsive">
+                <table class="table text-center">
+                    <thead>
+                        <tr>
+                            <th style="width: 34% " class="fs-3"></th>
+                            <th style="width: 22%; " class="fs-3">Free</th>
+                            <th style="width: 22%; " class="fs-3">Pro</th>
+                            <th style="width: 22%; " class="fs-3">Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="text-start fs-3">Public</th>
+                            <td><img src="/Imgs/check.png" width="24" height="24"></td>
+                            <td><img src="/Imgs/check.png" width="24" height="24"></td>
+                            <td><img src="/Imgs/check.png" width="24" height="24"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-start fs-3">Private</th>
+                            <td></td>
+                            <td><img src="/Imgs/check.png" width="24" height="24"></td>
+                            <td><img src="/Imgs/check.png" width="24" height="24"></td>
+                        </tr>
+                    </tbody>
+
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="text-start fs-3">Permissions</th>
+                            <td><img src="/Imgs/check.png" width="24" height="24"></td>
+                            <td><img src="/Imgs/check.png" width="24" height="24"></td>
+                            <td><img src="/Imgs/check.png" width="24" height="24"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-start fs-3">Sharing</th>
+                            <td></td>
+                            <td><img src="/Imgs/check.png" width="24" height="24"></td>
+                            <td><img src="/Imgs/check.png" width="24" height="24"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-start fs-3">Unlimited members</th>
+                            <td></td>
+                            <td><img src="/Imgs/check.png" width="24" height="24"></td>
+                            <td><img src="/Imgs/check.png" width="24" height="24"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-start fs-3">Extra security</th>
+                            <td></td>
+                            <td></td>
+                            <td><img src="/Imgs/check.png" width="24" height="24"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ************************************************************************************************************************************************************** -->
+        <div class="container mt-5">
+            <p class="display-6 text-center mb-4 " style="font-size: 80px; color: #fff; margin: 30px;">Our Mind Glooming
+                Data Deals</p>
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                        <div class="card-header py-3">
+                            <h4 class="my-0 fw-normal">Free</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title">Rs-100<small
+                                    class="text-body-secondary fw-light">/mo</small></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>10 users included</li>
+                                <li>2 GB of storage</li>
+                                <li>Email support</li>
+                                <li>Help center access</li>
+                            </ul>
+                            <a class="text-decoration-none " href="/SignUp.html"><button type="button"
+                                    class="w-100 btn btn-lg btn-outline-dark">Sign up for free</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                        <div class="card-header py-3">
+                            <h4 class="my-0 fw-normal">Pro</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title">Rs-700<small
+                                    class="text-body-secondary fw-light">/mo</small></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>20 users included</li>
+                                <li>10 GB of storage</li>
+                                <li>Priority email support</li>
+                                <li>Help center access</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-dark">Get started</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-dark">
+                        <div class="card-header py-3 text-bg-dark border-dark">
+                            <h4 class="my-0 fw-normal">Enterprise</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title">Rs-900<small
+                                    class="text-body-secondary fw-light">/mo</small></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>30 users included</li>
+                                <li>15 GB of storage</li>
+                                <li>Phone and email support</li>
+                                <li>Help center access</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-dark">Contact us</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ************************************************************************************************************************************************************** -->
+    <footer class="footer">
+        <br>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.404984704744!2d66.9965998112964!3d24.850014145582804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33e115cbdc755%3A0x93603ffb7aba4369!2sM.A%20Jinnah%20Rd%2C%20Bunder%20Quarter%2C%20Karachi%2C%20Karachi%20City%2C%20Sindh%2C%20Pakistan!5e0!3m2!1sen!2s!4v1708120520930!5m2!1sen!2s"
+            width="100%" height="130" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="footer-container">
+            <div>
+                <h2>About Us </h2><br>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque sapiente mollitia doloribus
+                    provident? Eos quisquam aliquid vel dolorum, impedit culpa.</p>
+                <ul class="social-icons">
+                    <li class="flex">
+                        <a href="https://twitter.com/i/flow/login" target="_blank"><i class="fa fa-twitter fa-1x"
+                                aria-hidden="true"></a></i>
+                    </li>
+                    <li class="flex">
+                        <a href="https://www.facebook.com/login/" target="_blank"><i class="fa fa-facebook fa-1x"
+                                aria-hidden="true"></a></i>
+                    </li>
+                    <li class="flex">
+                        <a href="https://www.instagram.com/accounts/login/?hl=en" target="_blank"><i
+                                class="fa fa-instagram fa-1x" aria-hidden="true"></a></i>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h2>Useful Links</h2><br>
+                <a href="/Login.html">Blog</a>
+                <a href="/Rooms.html">Rooms</a>
+                <a href="/SignUp.html">Subscription</a>
+                <a href="#">Gift Card</a>
+            </div>
+
+            <div>
+                <h2>Privacy</h2>
+                <br>
+                <a href="/Index.html">Home</a>
+                <a href="/About.html">About Us</a>
+                <a href="/ContactUs.html">Contact Us</a>
+                <a href="/Services.html">Services</a>
+            </div>
+
+            <div>
+                <h2>Have A Question</h2><br>
+                <div class="contact-item">
+                    <span>
+                        <i class="fa fa-map"></i>
+                    </span>
+                    <span>
+                        M.A Jinnah Rd
+                        Bunder Quarter, Karachi, Karachi City, Sindh
+                        Pakistan
+                    </span>
+                </div>
+                <div class="contact-item">
+                    <span>
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                    </span>
+                    <span>
+                        +92 3130260559
+                    </span>
+                </div>
+                <div class="contact-item">
+                    <span>
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </span>
+                    <span>
+                        bushrajantubajan@gmail.com
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-1  fs-3" style="background-color: rgb(255, 255, 255);">
+            <a class="text-body" href="#">© 2020 Copyright : Paradise Hotel</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+<!--  -->

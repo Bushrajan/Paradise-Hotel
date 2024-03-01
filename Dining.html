@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Paradise</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <style>
+        /* Your general CSS styles here */
+        h1 {
+            transition: all ease 400ms;
+            font-size: 80px;
+            color: white;
+            margin-top: 5%;
+            margin-bottom: 8%;
+            text-shadow: 0px 50px 80px #030303;
+
+        }
+
+        h1:hover {
+            transform: scale(1.03);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: ' cursive';
+            font-weight: 400;
+            font-style: normal;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.27), rgba(0, 0, 0, 0)), url(/Imgs/restaurant\ \(6\).jpg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-attachment: fixed;
+
+        }
+
+        /*.........................Slider....................................*/
+        .slider-fluid {
+            background: linear-gradient(rgba(9, 8, 12, 0.488), rgba(255, 255, 255, 0.376));
+            position: absolute;
+            margin-top: 10%;
+            transform: translate(-50%, -50%);
+            margin-left: 50%;
+            width: 3000px;
+            height: 800px;
+            box-shadow: -80px 80px 780px #ffffff;
+            margin-bottom: 70%;
+            background-attachment: fixed;
+        }
+
+        .slider-fluid .slide .item {
+            width: 200px;
+            height: 300px;
+            position: absolute;
+            top: 50%;
+           
+            transform: translate(0, -50%);
+            border-radius: 30px;
+            box-shadow: 0 30px 50px #00000000;
+            background-position: 50% 50%;
+            background-size: cover;
+            display: inline-block;
+            transition: 0.5s;
+        }
+
+        .slide .item:nth-child(1),
+        .slide .item:nth-child(2) {
+            top: 0;
+            left: 0;
+            padding: 10px;
+            transform: translate(0, 0);
+            border-radius: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide .item:nth-child(3) {
+            left: 50%;
+        }
+
+        .slide .item:nth-child(4) {
+            left: calc(50% + 220px);
+        }
+
+        .slide .item:nth-child(5) {
+            left: calc(50% + 440px);
+        }
+
+        .slide .item:nth-child(6) {
+            left: calc(50% + 440px);
+        }
+
+        .slide .item:nth-child(7) {
+            left: calc(50% + 440px);
+        }
+
+        .slide .item:nth-child(8) {
+            left: calc(50% + 440px);
+        }
+
+        .slide .item:nth-child(9) {
+            left: calc(50% + 440px);
+        }
+
+        .slide .item:nth-child(10) {
+            left: calc(50% + 440px);
+        }
+
+        .slide .item:nth-child(11) {
+            left: calc(50% + 440px);
+        }
+
+        .slide .item:nth-child(12) {
+            left: calc(50% + 440px);
+        }
+
+        .slide .item:nth-child(13) {
+            left: calc(50% + 440px);
+        }
+
+        .slide .item:nth-child(14) {
+            left: calc(50% + 440px);
+        }
+
+        .slide .item:nth-child(15) {
+            left: calc(50% + 440px);
+        }
+
+        .slide .item:nth-child(16) {
+            left: calc(50% + 440px);
+        }
+
+        /* here n = 0, 1, 2, 3,... */
+        .slide .item:nth-child(n + 16) {
+            opacity: 0;
+            left: calc(50% + 660px);
+        }
+
+        .item .content {
+            position: absolute;
+            top: 50%;
+            left: 100px;
+            width: 300px;
+            text-align: left;
+            color: white;
+            transform: translate(0, -50%);
+            font-family: system-ui;
+            display: none;
+        }
+
+        .slide .item:nth-child(2) .content {
+            display: block;
+        }
+
+        .content .name {
+            font-size: 40px;
+            text-transform: uppercase;
+            font-weight: bold;
+            opacity: 0;
+            animation: animate 1s ease-in-out 1 forwards;
+
+        }
+
+        .content .des {
+            margin-top: 10px;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: animate 1s ease-in-out 0.3s 1 forwards;
+
+        }
+
+        .content button {
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            opacity: 0;
+            animation: animate 1s ease-in-out 0.6s 1 forwards;
+
+
+        }
+
+        @keyframes animate {
+            from {
+                opacity: 0;
+                transform: translate(0, 100px);
+                filter: blur (33px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translate(0);
+                filter: blur(0);
+            }
+        }
+
+        .button {
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            bottom: 20px;
+        }
+
+        .button button {
+            width: 40px;
+            height: 35px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            margin: 0 5px;
+            border: 1px solid rgb(0, 0, 0);
+            transition: 0.3s;
+            
+        }
+
+        .button button :hover {
+            background: #ababab00;
+            color: #000000;
+        }
+
+        /*.......................slider end with media query..................................*/
+        /* footer */
+        .footer {
+            background: rgb(0, 0, 0);
+            color: #fff;
+            text-align: center;
+            margin-top: 68%;
+        }
+
+        .footer-container {
+
+            width: 85vw;
+            margin: 0 auto;
+            padding: 30px 0;
+        }
+
+        .footer-container p,
+        .footer-container a,
+        .footer-container span {
+            opacity: 0.8;
+        }
+
+        .footer a {
+            display: flex;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .social-icons {
+            list-style: none;
+            display: flex;
+            padding: 15px 0;
+        }
+
+        .social-icons li {
+            margin: 0 10px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .contact-item span {
+            display: block;
+        }
+
+
+
+        @media(min-width: 900px) {
+            .footer-container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 20px;
+            }
+        }
+
+        @media(min-width: 1170px) {
+            .footer {
+                text-align: left;
+            }
+
+            .footer-container {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .footer-container div:nth-child(1) p {
+                padding-right: 20px;
+            }
+
+            .contact-item {
+                display: grid;
+                grid-template-columns: 10% 90%;
+                margin-bottom: 15px;
+                align-items: center;
+            }
+        }
+
+        .showModal {
+            position: fixed;
+            background: transparent;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 5;
+        }
+    </style>
+</head>
+
+<body>
+  <div class="body" style="margin-left: 5%; margin-right:5%;">        <!--Your HTML content here -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <div>
+                    <form class="container-fluid m-2 justify-content-right">
+
+                        <a href="SignUp.html" class="nav-link active  fs-6" aria-current="page"><button
+                                class="btn btn-outline-light fs-6 " type="button">Sign
+                                Up</a></button>
+                        <img src="/Imgs/pipe.png" alt="pipe" height="65px">
+                        <a class="active  fs-6" aria-current="page" href="/Login.html"><button
+                                class="btn btn-outline-light  " type="button">Login</button></a>
+                    </form>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+
+                    <a class="nav-link active  fs-5" aria-current="page" href="Index.html"><button
+                            class="btn btn-outline-light m-1 fs-6 " type="button">Home</a></button>
+
+                    <a class="nav-link active  fs-5" aria-current="page" href="Rooms.html"><button
+                            class="btn btn-outline-light m-1 fs-6 " type="button">Rooms</a></button>
+                    <a class="nav-link active  fs-5" aria-current="page" href="Dining.html"><button
+                            class="btn btn-outline-light m-1 fs-6 " type="button">Dining</a></button>
+                    <a class="nav-link active  fs-5" aria-current="page" href="About.html"><button
+                            class="btn btn-outline-light m-1 fs-6 " type="button">About</a></button>
+                    <a class="nav-link active  fs-5" aria-current="page" href="/Offers.html" target="_blank""><button
+                        class=" btn btn-outline-light m-1 fs-6 " type=" button">Offer</a></button>
+                    <a class="nav-link active  fs-5" aria-current="page" href="Services.html"><button
+                            class="btn btn-outline-light m-1 fs-6 " type="button">Services</a></button>
+                    <a class="nav-link active  fs-5" aria-current="page" href="ContactUs.html"><button
+                            class="btn btn-outline-light m-1 fs-6 " type="button">Contact Us</a></button>
+                </div>
+
+            </div>
+        </nav>
+    </div>
+    <br><br><br>
+
+    <div class="div w-100">
+        <div class="cont">
+
+            <center>
+                <div class="logo"><a class="navbar-brand mt-2 mb-4" href="index.html">
+                        <img src="Imgs/logo.png " class="img-fluid" alt="logo" width="30%" height="380px"></a></div>
+                <h1>Dinning
+                    <br><br>
+                    <Blockquote>" Food is better when you eat together " </Blockquote>
+                </h1>
+            </center>
+        </div>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+    <div class="slider-fluid w-100 h-100 ">
+        <div class="slide w-30 ">
+
+            <div class="item" style="background-image: url(Imgs/buffy1.avif); ">
+                <div class="content">
+                    <div class="name">Pleasent & Comfy </div>
+                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum! Lorem ipsum
+                        dolor sit amet consectetur adipisicing elit. Modi velit nobis incidunt laborios rem. </div>
+                    <button>Book Now</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(Imgs/breakfast\ \(1\).jpg);">
+                <div class="content">
+                    <div class="name">Fresh Breakfast</div>
+                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum! Lorem ipsum
+                        dolor sit amet consectetur adipisicing elit. Modi velit nobis incidunt laborios rem. </div>
+                    <button>Book Now</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(Imgs/buffy11.jpg);">
+                <div class="content">
+                    <div class="name">Medium Steak</div>
+                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum! Lorem ipsum
+                        dolor sit amet consectetur adipisicing elit. Modi velit nobis incidunt laborios rem. </div>
+                    <button>Book Now</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(Imgs/buffy7.jpg);">
+                <div class="content">
+                    <div class="name">Buffy</div>
+                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                    <button>Book Now</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(Imgs/buffy3.webp);">
+                <div class="content">
+                    <div class="name">Dine Dish</div>
+                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                    <button>Book Now</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(Imgs/buffy4.webp);">
+                <div class="content">
+                    <div class="name">Grand Buffy</div>
+                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum! Lorem ipsum
+                        dolor sit amet consectetur, adipisicing elit. Laboriosam neque corporis, praesentium nobis
+                        maiores aliquam fugiat?</div> <button>Book Now</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(Imgs/buffy7.jpg);">
+                <div class="content">
+                    <div class="name">Get together Dish</div>
+                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum! Lorem ipsum
+                        dolor sit amet consectetur, adipisicing elit. Laboriosam neque corporis, praesentium nobis
+                        maiores aliquam fugiat?</div> <button>See More</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(Imgs/buffy11.jpg);">
+                <div class="content">
+                    <div class="name">Family Offer Special </div>
+                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                    <button>Book Now</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(Imgs/buffy1.avif);">
+                <div class="content">
+                    <div class="name">Ancient Vine </div>
+                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum! Lorem ipsum
+                        dolor sit amet consectetur, adipisicing elit. Laboriosam neque corporis, praesentium nobis
+                        maiores aliquam fugiat?</div> <button>Book Now</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(Imgs/breakfast\ \(1\).jpg);">
+                <div class="content">
+                    <div class="name">Breakfast or Bruch </div>
+                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                    <button>Book Now</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(Imgs/buffy3.webp);">
+                <div class="content">
+                    <div class="name">Rare Steak</div>
+                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum! Lorem ipsum
+                        dolor sit amet consectetur, adipisicing elit. Laboriosam neque corporis, praesentium nobis
+                        maiores aliquam fugiat?</div> <button>Book Now</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(Imgs/d6.jpg);">
+                <div class="content">
+                    <div class="name">Private Dinner Special</div>
+                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                    <button>Book Now</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(Imgs/drinks3.webp);">
+                <div class="content">
+                    <div class="name">Omni Mint Juices</div>
+                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum! Lorem ipsum
+                        dolor sit amet consectetur, adipisicing elit. Laboriosam neque corporis, praesentium nobis
+                        maiores aliquam fugiat?</div>
+                    <button>Book Now</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(Imgs/drinks2.JPG);">
+                <div class="content">
+                    <div class="name">Self-Made Drinks</div>
+                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                    <button>Book Now</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(Imgs/drinks1.jpeg);">
+                <div class="content">
+                    <div class="name">Services higly Recommemded</div>
+                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                    <button>Book Now</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(Imgs/d5.jpeg);">
+                <div class="content">
+                    <div class="name">Vine </div>
+                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum! Lorem ipsum
+                        dolor sit amet consectetur, adipisicing elit. Laboriosam neque corporis, praesentium nobis
+                        maiores aliquam fugiat?</div>
+                    <button>Book Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="button">
+            <button class="prev"><i class="fa fa-arrow-left"></i>
+
+            </button>
+            <button class="next"><i class="fa fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    
+
+    <footer class="footer">
+        <br>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.404984704744!2d66.9965998112964!3d24.850014145582804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33e115cbdc755%3A0x93603ffb7aba4369!2sM.A%20Jinnah%20Rd%2C%20Bunder%20Quarter%2C%20Karachi%2C%20Karachi%20City%2C%20Sindh%2C%20Pakistan!5e0!3m2!1sen!2s!4v1708120520930!5m2!1sen!2s"
+            width="100%" height="130" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="footer-container">
+            <div>
+                <h2>About Us </h2><br>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque sapiente mollitia doloribus
+                    provident? Eos quisquam aliquid vel dolorum, impedit culpa.</p>
+                <ul class="social-icons">
+                    <li class="flex">
+                        <a href="https://twitter.com/i/flow/login" target="_blank"><i class="fa fa-twitter fa-1x"
+                                aria-hidden="true"></a></i>
+                    </li>
+                    <li class="flex">
+                        <a href="https://www.facebook.com/login/" target="_blank"><i class="fa fa-facebook fa-1x"
+                                aria-hidden="true"></a></i>
+                    </li>
+                    <li class="flex">
+                        <a href="https://www.instagram.com/accounts/login/?hl=en" target="_blank"><i
+                                class="fa fa-instagram fa-1x" aria-hidden="true"></a></i>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h2>Useful Links</h2><br>
+                <a href="/Login.html">Blog</a>
+                <a href="/Rooms.html">Rooms</a>
+                <a href="/SignUp.html">Subscription</a>
+                <a href="#">Gift Card</a>
+            </div>
+
+            <div>
+                <h2>Privacy</h2>
+                <br>
+                <a href="/Index.html">Home</a>
+                <a href="/About.html">About Us</a>
+                <a href="/ContactUs.html">Contact Us</a>
+                <a href="/Services.html">Services</a>
+            </div>
+
+            <div>
+                <h2>Have A Question</h2><br>
+                <div class="contact-item">
+                    <span>
+                        <i class="fa fa-map"></i>
+                    </span>
+                    <span>
+                        M.A Jinnah Rd
+                        Bunder Quarter, Karachi, Karachi City, Sindh
+                        Pakistan
+                    </span>
+                </div>
+                <div class="contact-item">
+                    <span>
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                    </span>
+                    <span>
+                        +92 3130260559
+                    </span>
+                </div>
+                <div class="contact-item">
+                    <span>
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </span>
+                    <span>
+                        bushrajantubajan@gmail.com
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-1  fs-3" style="background-color: rgb(255, 255, 255);">
+            <a class="text-body" href="#">© 2020 Copyright : Paradise Hotel</a>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
